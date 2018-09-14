@@ -11,10 +11,10 @@ Xml to Struct generator for Go
 
 **Syntax**
 
-`xtos <settings> <filename>`
+`xtos <flags> <filename>`
 
 
-**Settings**
+**Flags**
 ```
 -nt   no tag
 -wo   generate xml to file
