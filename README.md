@@ -3,7 +3,7 @@ Xml to Struct generator for Go
 
 
 ## Install
-`go get github.com/miguelambayec/XtoS/`
+`go get github.com/miguelambayec/xtos/`
 
 
 ## Usage
@@ -11,7 +11,7 @@ Xml to Struct generator for Go
 
 **Syntax**
 
-`XtoS <settings> <filename>`
+`xtos <settings> <filename>`
 
 
 **Settings**
@@ -37,7 +37,7 @@ sample.xml
 
 Execute XtoS to terminal
 
-`$ XtoS sample.xml`
+`$ xtos sample.xml`
 
 
 Output to terminal
