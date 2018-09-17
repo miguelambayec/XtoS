@@ -94,21 +94,10 @@ func initXmlStrings() {
 		         <size description="Small">
 		            <color_swatch image="red_cardigan.jpg">Red</color_swatch>
 		            <color_swatch image="navy_cardigan.jpg">Navy</color_swatch>
-		            <color_swatch image="burgundy_cardigan.jpg">Burgundy</color_swatch>
 		         </size>
 		         <size description="Medium">
 		            <color_swatch image="red_cardigan.jpg">Red</color_swatch>
 		            <color_swatch image="navy_cardigan.jpg">Navy</color_swatch>
-		            <color_swatch image="burgundy_cardigan.jpg">Burgundy</color_swatch>
-		            <color_swatch image="black_cardigan.jpg">Black</color_swatch>
-		         </size>
-		         <size description="Large">
-		            <color_swatch image="navy_cardigan.jpg">Navy</color_swatch>
-		            <color_swatch image="black_cardigan.jpg">Black</color_swatch>
-		         </size>
-		         <size description="Extra Large">
-		            <color_swatch image="burgundy_cardigan.jpg">Burgundy</color_swatch>
-		            <color_swatch image="black_cardigan.jpg">Black</color_swatch>
 		         </size>
 		      </catalog_item>
 		   </product>
@@ -207,30 +196,6 @@ func initXmlStrings() {
 		  <price>2.50</price>
 		  <subscription price="24" per="year"/>
 		</magazine>
-		<book style="novel" id="myfave">
-		  <author>
-		    <first-name>Toni</first-name>
-		    <last-name>Bob</last-name>
-		    <degree from="Trenton U">B.A.</degree>
-		    <degree from="Harvard">Ph.D.</degree>
-		    <award>Pulitzer</award>
-		    <publication>Still in Trenton</publication>
-		    <publication>Trenton Forever</publication>
-		  </author>
-		  <price intl="Canada" exchange="0.7">6.50</price>
-		  <excerpt>
-		    <p>It was a dark and stormy night.</p>
-		    <p>But then all nights in Trenton seem dark and      stormy to someone who has gone through what      <emph>I</emph> have.</p>
-		    <definition-list>
-		      <term>Trenton</term>
-		      <definition>misery</definition>
-		    </definition-list>
-		  </excerpt>
-		</book>
-		<my:book xmlns:my="uri:mynamespace" style="leather" price="29.50">
-		  <my:title>Who's Who in Trenton</my:title>
-		  <my:author>Robert Bob</my:author>
-		</my:book>
 		</bookstore>`,
 	}
 
@@ -371,61 +336,38 @@ func initXmlStrings() {
 		`package model
 
 		type Bookstore struct {
-			Book      []Book
-			Magazine  Magazine
+			Book []Book
+			Magazine Magazine
 			Specialty string ` + "`" + `xml:",attr"` + "`" + `
 		}
 
-		type Excerpt struct {
-			DefinitionList DefinitionList
-			P              []string
-		}
-
-		type DefinitionList struct {
-			Definition string
-			Term       string
-		}
-
-		type P struct {
-			Emph string
-		}
-
-		type Price struct {
-			Exchange float64 ` + "`" + `xml:",attr"` + "`" + `
-			Intl     string  ` + "`" + `xml:",attr"` + "`" + `
-		}
-
-		type Degree struct {
-			From string ` + "`" + `xml:",attr"` + "`" + `
-		}
-
 		type Magazine struct {
-			Frequency    string ` + "`" + `xml:",attr"` + "`" + `
-			Price        float64
-			Style        string ` + "`" + `xml:",attr"` + "`" + `
+			Frequency string ` + "`" + `xml:",attr"` + "`" + `
+			Price float64
+			Style string ` + "`" + `xml:",attr"` + "`" + `
 			Subscription Subscription
 		}
 
 		type Subscription struct {
-			Per   string ` + "`" + `xml:",attr"` + "`" + `
-			Price int64  ` + "`" + `xml:",attr"` + "`" + `
+			Per string ` + "`" + `xml:",attr"` + "`" + `
+			Price int64 ` + "`" + `xml:",attr"` + "`" + `
 		}
 
 		type Editor struct {
 			FirstName string
-			LastName  string
+			LastName string
 		}
 
 		type Book struct {
 			Author Author
-			Price  int64
-			Style  string ` + "`" + `xml:",attr"` + "`" + `
+			Price int64
+			Style string ` + "`" + `xml:",attr"` + "`" + `
 		}
 
 		type Author struct {
-			Award     string
+			Award string
 			FirstName string
-			LastName  string
+			LastName string
 		}`,
 	}
 }
